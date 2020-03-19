@@ -1,7 +1,7 @@
 
 # School study system
 
-NB! Original repo was made in schools's private repo gitlab.cs.ttu and it is not possible to make it public there.
+NB! Original repo was made in school's private repo gitlab.cs.ttu and it is not possible to make it public there.
 
 ### Description
 We were given fun task - create MVP for school study system that would include semesters with subjects in them, teachers, students, grading system, some statistics etc. This is had to be made in limited time range (~10 hours). \
