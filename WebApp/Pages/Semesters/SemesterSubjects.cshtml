@@ -1,0 +1,51 @@
+@page
+@model WebApp.Pages.Semesters.SemesterSubjects
+
+@{
+    Layout = Layout;
+    var count = 1;
+}
+
+<h2>@Model.Semester.SemesterName</h2>
+
+<form method="get">
+    <input type="hidden" name="id" value="@Model.Semester.SemesterId"/>
+    <input type="hidden" name="handler" value="Search"/>
+    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+        <div class="input-group">
+            <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" name="SearchString" value="@Model.SearchString" class="form-control border-0 bg-light">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-link text-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" style="text-align: center">Subject</th>
+      <th scope="col" style="text-align: center">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(var subject in Model.SubjectSemesters)
+  {
+    <tr>
+      <th>@count</th>
+      <td style="text-align: center">@subject.Subject.SubjectName</td>
+      <td style="text-align: center">
+        <a asp-page="/SubjectInfo" asp-route-id="@subject.SubjectSemesterId">Information</a>
+      </td>
+    </tr>
+    count++;
+  }
+  </tbody>
+</table>
+
+@section Scripts {
+  @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

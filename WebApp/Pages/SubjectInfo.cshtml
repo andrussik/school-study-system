@@ -1,0 +1,72 @@
+@page
+@model WebApp.Pages.SubjectInfo
+
+@{
+    Layout = Layout;
+}
+
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectSemester.Subject)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubjectSemester.Subject.SubjectName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectSemester.Semester)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubjectSemester.Semester.SemesterName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Teacher")
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var item in Model.SubjectSemester.PersonSubjectSemesters)
+            {
+                if (item.Role.RoleName == "Teacher")
+                {
+                    @Html.DisplayName(item.Person.FirstLastName)
+                }
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectSemester.Subject.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubjectSemester.Subject.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectSemester.Subject.ECTS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubjectSemester.Subject.ECTS)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Total students")
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TotalStudents
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Grades")
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.TotalStudents > 0)
+            {
+                <a asp-page="./SubjectGrades" asp-route-id="@Model.SubjectSemester.SubjectSemesterId">view grades</a>
+
+            }
+            else
+            {
+                <p>Not available</p>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./SubjectsHome">Back to List</a>
+</div>

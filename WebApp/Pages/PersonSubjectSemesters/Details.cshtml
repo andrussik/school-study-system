@@ -1,0 +1,37 @@
+@page
+@model WebApp.Pages.PersonSubjectSemesters.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PersonSubjectSemester</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonSubjectSemester.Person)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonSubjectSemester.Person.Citizenship)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonSubjectSemester.Role)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonSubjectSemester.Role.RoleName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonSubjectSemester.SubjectSemester)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonSubjectSemester.SubjectSemester.SubjectSemesterId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PersonSubjectSemester.PersonSubjectSemesterId">Edit</a> |
+    <a asp-page="./Index" asp-route-id="@Model.PersonSubjectSemester.PersonId">Back to List</a>
+</div>

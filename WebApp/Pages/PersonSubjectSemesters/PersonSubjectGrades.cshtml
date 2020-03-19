@@ -1,0 +1,48 @@
+@page
+@model WebApp.Pages.PersonSubjectSemesters.PersonSubjectGrades
+
+@{
+    Layout = Layout;
+}
+
+<h5>@Model.PersonSubjectSemester.Person.FirstLastName grades of @Model.PersonSubjectSemester.SubjectSemester.SubjectSemesterName</h5>
+
+<table class="table table-hover" style="table-layout: fixed; word-wrap: break-word; text-align: center">
+    <thead>
+    <tr>
+        <th scope="col">
+            <a>Grade</a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    @foreach (var item in Model.PersonSubjectSemester.Grades)
+    {
+        <tr>
+            @if (item.GradeNumber != null)
+            {
+                <td class="align-middle">
+                    @item.GradeNumber
+                </td>
+            }
+            else
+            {
+                if (item.IsPassed)
+                {
+                    <td class="align-middle">
+                        Passed
+                    </td>
+                }
+                else
+                {
+                    <td class="align-middle">
+                        Not Passed
+                    </td>
+                }
+            }
+        </tr>
+    }
+    
+    </tbody>
+</table>

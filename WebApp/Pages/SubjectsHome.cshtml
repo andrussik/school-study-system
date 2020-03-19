@@ -1,0 +1,53 @@
+@page
+@model WebApp.Pages.SubjectsHome
+
+@{
+    Layout = Layout;
+}
+
+<table class="table table-hover" style="table-layout: fixed; word-wrap: break-word; text-align: center">
+    <thead>
+    <tr>
+        <th scope="col">
+            <a>Subject name</a>
+        </th>
+        <th scope="col">
+            <a>Semester</a>
+        </th>
+        <th scope="col">
+            <a>Teacher</a>
+        </th>
+        <th scope="col">
+            <a>Details</a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    @foreach (var item in Model.SubjectSemesters)
+    {
+        <tr>
+            <td class="align-middle">
+                @item.Subject.SubjectName
+            </td>
+            <td class="align-middle">
+                @item.Semester.SemesterName
+            </td>
+            <td class="align-middle">
+                @foreach (var personSubject in item.PersonSubjectSemesters)
+                {
+                    if (personSubject.Role.RoleName == "Teacher")
+                    {
+                        @personSubject.Person.FirstLastName
+                    }
+                }
+            </td>
+            <td class="align-middle">
+                <a asp-page="./SubjectInfo" asp-route-id="@item.SubjectSemesterId">details</a>
+            </td>
+        </tr>
+        
+    }
+    
+    </tbody>
+</table>

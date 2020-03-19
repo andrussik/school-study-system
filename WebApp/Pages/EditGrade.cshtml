@@ -1,0 +1,46 @@
+@page
+@model WebApp.Pages.EditGrade
+
+@{
+    Layout = Layout;
+}
+
+<h1>Edit</h1>
+
+<h4>Grade</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Grade.GradeId" />
+            <div class="form-group">
+                <label asp-for="Grade.GradeNumber" class="control-label"></label>
+                <input asp-for="Grade.GradeNumber" class="form-control" />
+                <span asp-validation-for="Grade.GradeNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Grade.IsPassed" /> @Html.DisplayNameFor(model => model.Grade.IsPassed)
+                </label>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Grade.PersonSubjectSemesterId" class="control-label"></label>
+                <select asp-for="Grade.PersonSubjectSemesterId" class="form-control" asp-items="ViewBag.PersonSubjectSemesterId"></select>
+                <span asp-validation-for="Grade.PersonSubjectSemesterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @* <input type="hidden" asp-for="Grade.PersonSubjectSemester" /> *@
+                <input type="submit" value="Save" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./SubjectGrades" asp-route-id="@Model.Grade.PersonSubjectSemester.SubjectSemesterId">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,48 @@
+@page
+@model WebApp.Pages.Grades.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade[0].GradeNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade[0].IsPassed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade[0].PersonSubjectSemester)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Grade) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPassed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonSubjectSemester.PersonSubjectSemesterId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GradeId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GradeId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GradeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

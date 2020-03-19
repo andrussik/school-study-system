@@ -1,0 +1,11 @@
+/Users/andre/RiderProjects/StudySystem/DAL/bin/Debug/netstandard2.1/DAL.deps.json
+/Users/andre/RiderProjects/StudySystem/DAL/bin/Debug/netstandard2.1/DAL.dll
+/Users/andre/RiderProjects/StudySystem/DAL/bin/Debug/netstandard2.1/DAL.pdb
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.csprojAssemblyReference.cache
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.AssemblyInfoInputs.cache
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.AssemblyInfo.cs
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.dll
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.pdb
+/Users/andre/RiderProjects/StudySystem/DAL/bin/Debug/netstandard2.1/Domain.dll
+/Users/andre/RiderProjects/StudySystem/DAL/bin/Debug/netstandard2.1/Domain.pdb
+/Users/andre/RiderProjects/StudySystem/DAL/obj/Debug/netstandard2.1/DAL.csproj.CopyComplete

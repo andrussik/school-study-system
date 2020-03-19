@@ -1,0 +1,8 @@
+/Users/andre/RiderProjects/StudySystem/Domain/bin/Debug/netstandard2.1/Domain.deps.json
+/Users/andre/RiderProjects/StudySystem/Domain/bin/Debug/netstandard2.1/Domain.dll
+/Users/andre/RiderProjects/StudySystem/Domain/bin/Debug/netstandard2.1/Domain.pdb
+/Users/andre/RiderProjects/StudySystem/Domain/obj/Debug/netstandard2.1/Domain.csprojAssemblyReference.cache
+/Users/andre/RiderProjects/StudySystem/Domain/obj/Debug/netstandard2.1/Domain.AssemblyInfoInputs.cache
+/Users/andre/RiderProjects/StudySystem/Domain/obj/Debug/netstandard2.1/Domain.AssemblyInfo.cs
+/Users/andre/RiderProjects/StudySystem/Domain/obj/Debug/netstandard2.1/Domain.dll
+/Users/andre/RiderProjects/StudySystem/Domain/obj/Debug/netstandard2.1/Domain.pdb
